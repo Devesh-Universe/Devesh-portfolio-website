@@ -1,0 +1,527 @@
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #025F4C;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo Styles */
+
+.logo {
+  display: inline-block;
+  background-color: #025F4C; /* Dark green background color */
+  padding: 30px;
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
+}
+
+.logo h1 {
+  font-size: 24px;
+  margin: 0;
+  font-weight: bold;
+  position: relative;
+}
+
+.logo-accent {
+  color: #3ac2a6; /* Teal accent color */
+}
+
+/* Underline Effect on Hover */
+
+.logo:hover {
+  text-decoration: none;
+}
+
+.logo-accent::before {
+  content: "";
+  position: absolute;
+  bottom: -3px; /* Adjust as needed for underline position */
+  left: 0;
+  width: 100%;
+  height: 2px; /* Adjust as needed for underline thickness */
+  background-color: #3ac2a6; /* Teal color */
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover .logo-accent::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+
+nav ul {
+    list-style: none;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li:first-child {
+    margin-left: 0;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: rgb(156, 243, 156);
+    text-decoration: underline;
+}
+
+.social-icon {
+    margin-right: 20px;
+}
+
+.social-icon a {
+    color: #fff;
+    font-size: 30px;
+    margin-left: 10px;
+    padding-right: 15px;
+    text-decoration: none;
+}
+
+.social-icon a:hover {
+    color: #f69235;
+}
+
+/* Responsive CSS using media queries */
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo h1 {
+        padding-left: 0;
+        padding-bottom: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .social-icon {
+        margin-right: 0;
+        margin-top: 10px;
+    }
+}
+
+
+section {
+    width: 100%;
+    height: 100vh;
+    background-image: url("./image/front_page.png");
+    background-size: cover;
+    background-position: center;
+}
+.welcome-text {
+    max-width: 600px;
+    padding-top:200px;
+    color:rgb(18, 94, 69);
+}
+
+.welcome-text h1 {
+    font-size: 36px;
+    margin-left: -200px;
+    margin-bottom: 20px;
+}
+
+.welcome-text p {
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+ .about-section {
+    position: relative;
+    padding: 50px 0;
+    color:#fff;
+    background-image: linear-gradient(45deg, #025F4C, #1b996d);
+}
+
+.about-section h1 {
+    font-size: 50px;;
+    text-align: center;
+    padding-top: 5px;
+    color:rgb(249, 148, 65);
+}
+
+.about-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Add position: relative to .about-content */
+}
+
+.about-content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+
+.bio {
+    flex: 1;
+    max-width: 600px;
+    padding: 20px;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+
+.bio h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.bio p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.image {
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+    margin-left: 20px;
+
+}
+
+.images img {
+    max-width: 100%;
+    border-radius: 50%; /* Make the picture round */
+}
+
+/* CSS to move the About section up on scrolling */
+.about-section.fixed {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Responsive CSS using media queries */
+@media screen and (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image {
+        order: -1;
+        margin-top: 20px;
+    }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .certificate-card {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .certificate-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .certificate-img {
+    max-width: 100%;
+    border-radius: 10px;
+  }
+  
+/* Common styles for interests sections */
+.interests-section {
+    padding: 50px 0;
+    color: #fff;
+    background-image: linear-gradient(45deg, #025F4C, #1b996d);
+  }
+  
+  .interests-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  
+  .text {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .text h2 {
+    font-size: 32px;
+    color: #12a53d;
+  }
+  
+  .text p {
+    font-size: 18px;
+    line-height: 1.6;
+    color:#fff;
+  }
+  
+  .image {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .image img {
+    max-width: 100%;
+    border-radius: 8px; /* Add border radius for a more rounded image */
+  }
+  
+  /* Set background color for specific interests */
+  .agritech-section {
+    background-color: #f9f9f9;
+  }
+  
+  .organic-farming-section {
+    background-color: #fef1e2;
+  }
+  
+  /* Responsive CSS using media queries */
+  @media screen and (max-width: 768px) {
+    .interests-content {
+      flex-direction: column;
+    }
+  }
+  .technology-agriculture-section {
+    padding: 50px 0;
+    color: #fff;
+    background-image: linear-gradient(45deg, #025F4C,#43a761);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .content {
+    max-width: 1200px;
+    margin: 0 auto;
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .content h2 {
+    font-size: 28px;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  
+  .content p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #fff;
+  }
+  
+  .quote {
+    background-color: #025F4C;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 20px;
+    color: #fff; /* Set quote text color to match background */
+    text-align: center; /* Center the quote */
+  }
+  
+  .quote i {
+    margin-right: 10px;
+  }
+  
+  /* Responsive CSS using media queries */
+  @media screen and (max-width: 768px) {
+    .technology-agriculture-section {
+      flex-direction: column;
+    }
+  
+    .content {
+      flex: auto;
+      margin: 0;
+    }
+  }
+
+  /*----------------footer section -----------------*/
+
+  .footer-section {
+    background-color: #fff;
+    color: #025F4C;
+    padding: 40px;
+    margin-bottom: -50px;
+    text-align: center;
+   
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .footer-left, .footer-right {
+    flex-basis: 50%;
+  }
+  
+  .footer-left h3, .footer-right h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: rgb(249, 148, 65);
+  }
+  
+  .footer-left ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-left ul li {
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .footer-left ul li i {
+    margin-right: 10px;
+  }
+  
+  .footer-right .social-icons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .social-icons a {
+    display: inline-block;
+    margin-right: 10px;
+    color: #333;
+    font-size: 24px;
+    gap:10px;
+    transition: color 0.3s ease;
+  }
+  
+  .social-icons a:hover {
+    color: rgb(55, 0, 255);
+  }
+  
+  .resume-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: rgb(228, 11, 11);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .resume-button:hover {
+    background-color: #c70000;
+  }
+  .menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .menu li {
+    margin-bottom: 10px;
+  }
+  
+  .menu li a {
+    color: #025F4C;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .menu li a:hover {
+    background-color: #025F4C;
+    color: #fff;
+  }
+  
+  .footer-bottom:before {
+    content: "";
+    display: block;
+    height: 2px;
+    background-color: #333;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  @media screen and (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .footer-left,
+  .footer-right {
+    flex-basis: 100%;
+    margin-bottom: 30px;
+  }
+  
+  .menu {
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .menu li {
+    margin: 0 10px;
+  }
+}
+
+  
+  
